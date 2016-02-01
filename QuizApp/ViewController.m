@@ -49,8 +49,6 @@
     
     next = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [next addTarget:self action:@selector(nextQuestion:) forControlEvents:UIControlEventTouchUpInside];
-    num = 1;
-    cnt = 1;
 }
 
 
@@ -121,6 +119,7 @@
             num = 4;
             break;
         default:
+            
             break;
     }
 }
@@ -144,6 +143,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self setupParts];
     num = 1;
+    cnt = 1;
 }
 
 - (void)didReceiveMemoryWarning {
