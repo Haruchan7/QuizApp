@@ -112,13 +112,13 @@
             break;
         case 3:
             self.question.text = @"問題3";
-            num = 2;
+            num = 3;
             [self.view addSubview:question];
             break;
         case 4:
             self.question.text = @"問題4";
             [self.view addSubview:question];
-            num = 2;
+            num = 4;
             break;
         default:
             break;
