@@ -25,7 +25,7 @@
 @implementation ViewController
 
 - (void)setupParts{
-    self.question.text =@"問題文が入ります。";
+    self.question.text =@"question1";
     question.textAlignment = NSTextAlignmentLeft;
 
     question.backgroundColor = [UIColor clearColor];
@@ -50,10 +50,6 @@
     next = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [next addTarget:self action:@selector(nextQuestion:) forControlEvents:UIControlEventTouchUpInside];
     num = 1;
-/*
-    back = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [back addTarget:self action:@selector(backQuestion:) forControlEvents:UIControlEventTouchUpInside];
-*/
     cnt = 1;
 }
 
@@ -67,32 +63,36 @@
             [self.view addSubview:question];
             cnt = 1;
             num = 2;
+            //backボタンを表示する
             break;
         case 2:
             self.question.text = @"question3";
             [self.view addSubview:question];
             cnt = 2;
             num = 3;
+            //backボタンを表示する
             break;
         case 3:
             self.question.text = @"question4";
             cnt = 3;
             num = 4;
+            //backボタンを表示する
             break;
         case 4:
             self.question.text = @"question5";
             cnt = 4;
+            //正答率を見るボタンを表示する
             break;
         default:
             
             break;
     }
-
+    
+//switch文に入れたら消す
     back = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [back addTarget:self action:@selector(backQuestion:) forControlEvents:UIControlEventTouchUpInside];
     cnt = 1;
     [self.view addSubview:back];
-
 
 }
 
@@ -102,20 +102,23 @@
     switch (cnt) {
         case 1:
             self.question.text = @"問題1";
-            num = 2;
+            num = 1;
             [self.view addSubview:question];
             break;
         case 2:
             self.question.text = @"問題2";
+            num = 2;
             [self.view addSubview:question];
             break;
         case 3:
-            self.question.text = @"問題2";
+            self.question.text = @"問題3";
+            num = 2;
             [self.view addSubview:question];
             break;
         case 4:
-            self.question.text = @"問題2";
+            self.question.text = @"問題4";
             [self.view addSubview:question];
+            num = 2;
             break;
         default:
             break;
