@@ -18,6 +18,7 @@
     UIButton *incorrect;
     int num;
     int cnt;
+    BOOL judge;
 }
 
 @end
@@ -25,11 +26,11 @@
 @implementation ViewController
 
 - (void)setupParts{
-    self.question.text =@"question1";
-    question.textAlignment = NSTextAlignmentLeft;
+    self.question.text =@"クイズタイトル";
+    question.textAlignment = NSTextAlignmentCenter;
 
     question.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:question];
+    //[self.view addSubview:question];
 
     self.grade.text =@"評価が入ります。";
     grade.textAlignment = NSTextAlignmentLeft;
@@ -43,12 +44,18 @@
 
     correct = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.view addSubview:correct];
+    cnt  = 1;
     
     incorrect = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.view addSubview:incorrect];
+    cnt = 0;
     
     next = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [next addTarget:self action:@selector(nextQuestion:) forControlEvents:UIControlEventTouchUpInside];
+
+    back = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [back addTarget:self action:@selector(backQuestion:) forControlEvents:UIControlEventTouchUpInside];
+
 }
 
 
@@ -57,80 +64,133 @@
     //次の問題へ遷移する
     switch (num) {
         case 1:
-            self.question.text = @"question2";
+            self.question.text = @"question1";
+            //↑と書かないで、問題文を表示させるメソッドを呼びたい、、、
+            //[self showQuestion]??????????????????????????????
             [self.view addSubview:question];
-            cnt = 1;
-            num = 2;
-            //backボタンを表示する
+            //backボタンを表示しない
+            back.hidden;
             break;
         case 2:
-            self.question.text = @"question3";
+            self.question.text = @"question2";
             [self.view addSubview:question];
-            cnt = 2;
-            num = 3;
-            //backボタンを表示する
             break;
         case 3:
-            self.question.text = @"question4";
-            cnt = 3;
-            num = 4;
-            //backボタンを表示する
+            self.question.text = @"question3";
             break;
         case 4:
+            self.question.text = @"question4";
+            break;
+        case 5:
             self.question.text = @"question5";
-            cnt = 4;
-            //正答率を見るボタンを表示する
             break;
         default:
-            
             break;
     }
-    
-//switch文に入れたら消す
-    back = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [back addTarget:self action:@selector(backQuestion:) forControlEvents:UIControlEventTouchUpInside];
-    cnt = 1;
+    num ++;
     [self.view addSubview:back];
-
 }
 
 
 - (IBAction)backQuestion:(id)sender{
     NSLog(@"backQuestionを実行します");
-    switch (cnt) {
+    switch (num) {
         case 1:
-            self.question.text = @"問題1";
-            num = 1;
-            [self.view addSubview:question];
+            [self setupParts];
+            num = 2;
             break;
         case 2:
             self.question.text = @"問題2";
-            num = 2;
             [self.view addSubview:question];
             break;
         case 3:
             self.question.text = @"問題3";
-            num = 3;
             [self.view addSubview:question];
             break;
         case 4:
             self.question.text = @"問題4";
             [self.view addSubview:question];
-            num = 4;
+            break;
+        case 5:
+            self.question.text = @"問題5";
+            [self.view addSubview:question];
             break;
         default:
-            
             break;
     }
+    num --;
 }
+
+
+- (IBAction)showQuestion:(id)sender{
+    switch (num) {
+        case 1:
+            question.text = @"問題文1";
+            break;
+        case 2:
+            question.text = @"問題文2";
+            break;
+        case 3:
+            question.text = @"問題文3";
+            break;
+        case 4:
+            question.text = @"問題文4";
+            break;
+        case 5:
+            question.text = @"問題文5";
+            break;
+        default:
+            break;
+    }
+    [self.view addSubview:question];
+}
+
 
 - (void)chooseAnswer:(id)sender{
     //回答を選択する
-
+    judge = 1;
+    if(cnt = 0){
+        judge = false;
+    }
 }
 
 - (void)judgeGrade:(id)sender{
-    //正答率を元に評価を表示する
+    //選択肢を元に正解を判断する
+    switch (num) {
+        case 1:
+            if (judge == true) {
+                grade.text = @"正解";
+            }
+            grade.text = @"不正解";
+            break;
+        case 2:
+            if (judge == true) {
+                grade.text = @"正解";
+            }
+            grade.text = @"不正解";
+            break;
+        case 3:
+            if (judge == true) {
+                grade.text = @"正解";
+            }
+            grade.text = @"不正解";
+            break;
+        case 4:
+            if (judge == true) {
+                grade.text = @"正解";
+            }
+            grade.text = @"不正解";
+            break;
+        case 5:
+            if (judge == true) {
+                grade.text = @"正解";
+            }
+            grade.text = @"不正解";
+            break;
+        default:
+            break;
+    }
+    [self.view addSubview:grade];
 }
 
 - (void)calData:(id)sender{
@@ -142,8 +202,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self setupParts];
-    num = 1;
-    cnt = 1;
+//    [self showQuestion];
+    num = 0;
+//    cnt = 1;
 }
 
 - (void)didReceiveMemoryWarning {

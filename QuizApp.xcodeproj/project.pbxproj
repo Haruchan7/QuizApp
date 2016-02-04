@@ -13,6 +13,7 @@
 		E908C5081C5875990035D7E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E908C5061C5875990035D7E3 /* Main.storyboard */; };
 		E908C50A1C5875990035D7E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E908C5091C5875990035D7E3 /* Assets.xcassets */; };
 		E908C50D1C5875990035D7E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E908C50B1C5875990035D7E3 /* LaunchScreen.storyboard */; };
+		E98595321C605C220077CBB8 /* 4bb3b6228d611201cd6aaa9b21b3e523.png in Resources */ = {isa = PBXBuildFile; fileRef = E98595311C605C220077CBB8 /* 4bb3b6228d611201cd6aaa9b21b3e523.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E908C5091C5875990035D7E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E908C50C1C5875990035D7E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E908C50E1C5875990035D7E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E98595311C605C220077CBB8 /* 4bb3b6228d611201cd6aaa9b21b3e523.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4bb3b6228d611201cd6aaa9b21b3e523.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		E908C4FD1C5875990035D7E3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E98595311C605C220077CBB8 /* 4bb3b6228d611201cd6aaa9b21b3e523.png */,
 				E908C4FE1C5875990035D7E3 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -139,6 +142,7 @@
 				E908C50D1C5875990035D7E3 /* LaunchScreen.storyboard in Resources */,
 				E908C50A1C5875990035D7E3 /* Assets.xcassets in Resources */,
 				E908C5081C5875990035D7E3 /* Main.storyboard in Resources */,
+				E98595321C605C220077CBB8 /* 4bb3b6228d611201cd6aaa9b21b3e523.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +302,7 @@
 				E908C5131C5875990035D7E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
