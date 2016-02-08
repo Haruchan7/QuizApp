@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
--(IBAction)showQuestion:(id)sender; //問題を表示する
+-(IBAction)showQuestion;   //次の問題へ行く
 -(IBAction)nextQuestion:(id)sender;   //次の問題へ行く
 -(IBAction)backQuestion:(id)sender;   //次の問題へ行く
 -(IBAction)chooseAnswer:(id)sender; //回答を選択する

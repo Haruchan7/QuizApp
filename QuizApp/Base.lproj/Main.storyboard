@@ -22,7 +22,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="❌"/>
                                 <connections>
-                                    <action selector="chooseAnswer:" destination="BYZ-38-t0r" eventType="touchDragInside" id="G8x-pG-IdI"/>
+                                    <action selector="chooseIncorrect" destination="BYZ-38-t0r" eventType="touchUpInside" id="XBF-yb-tJQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db6-XU-CVl">
@@ -30,14 +30,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="○"/>
                                 <connections>
-                                    <action selector="chooseAnswer:" destination="BYZ-38-t0r" eventType="touchDragInside" id="EE9-lf-wIF"/>
+                                    <action selector="chooseCorrect" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fF-hE-rbd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnj-4K-STu">
-                                <rect key="frame" x="44" y="500" width="49" height="30"/>
-                                <state key="normal" title="←Back"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHk-1U-Flk">
+                                <rect key="frame" x="255" y="484" width="83" height="62"/>
+                                <state key="normal" title="→">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
-                                    <action selector="backQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N23-Bm-xyN"/>
+                                    <action selector="nextQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VCH-QN-mz1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3h6-Oa-qJO">
@@ -52,19 +54,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="quetion1" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="njw-yS-NBh">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="クイズタイトル" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="njw-yS-NBh">
                                 <rect key="frame" x="67" y="134" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHk-1U-Flk">
-                                <rect key="frame" x="255" y="484" width="83" height="62"/>
-                                <state key="normal" title="→">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnj-4K-STu">
+                                <rect key="frame" x="54" y="500" width="30" height="30"/>
+                                <state key="normal" title="←"/>
                                 <connections>
-                                    <action selector="nextQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VCH-QN-mz1"/>
+                                    <action selector="backQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N23-Bm-xyN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -74,7 +74,7 @@
                     <connections>
                         <outlet property="grade" destination="AVc-3c-egc" id="2xD-As-azu"/>
                         <outlet property="percentage" destination="3h6-Oa-qJO" id="yUi-wt-k07"/>
-                        <outlet property="question" destination="njw-yS-NBh" id="H8H-LS-PLT"/>
+                        <outlet property="question" destination="njw-yS-NBh" id="xbv-Ws-wvn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
